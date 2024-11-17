@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+}
+.blue-back{
+  margin-top: -2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  background-color: #D4F6FF;
+}
+.header {
+  margin-bottom: 20px;
+  color: #0D92F4;
+}
+
+.selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.route-display {
+  font-size: 18px;
+  font-weight: bold;
+}
+.date {
+  margin-left: 20px;
+}
+
+.main-content {
+  width: 80%;
+  height: 70%;
+  
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lineonly{
+  border: 2px solid #0D92F4;
+}
+
+.grid-container {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.amenities, .values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.amenity-item, .value-item {
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+.flight-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.flight-summary span {
+  margin-bottom: 5px;
+}
+
+.view-all {
+  margin-top: 20px;
+}
+
+.view-all-button {
+  background-color: #0D92F4;
+  color: white;
+  border-radius: 40px;
+  padding: 10px 20px;
+  /* border-radius: 10%; */
+  cursor: pointer;
+}
+
+.view-all-button:hover {
+  background-color: #0b7ac1;
+}

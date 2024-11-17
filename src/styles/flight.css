@@ -1,0 +1,137 @@
+.App {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  input[type="file"] {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  } 
+  .AirPlaneIcon img {
+    width: 50px;  /* Set the width of the image */
+    height: 50px; /* Set the height of the image */
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+    margin-right: 45px;
+  }
+  /*
+  .flight-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .flight-table th, .flight-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .flight-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .flight-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+   */
+
+
+   .flight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .flight-row {
+    display: flex;
+    
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flight-details {
+   
+    flex-wrap: wrap; 
+    /* gap: 15px;  */ 
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center; */
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+  }
+  
+  .detail {
+    display: flex;
+    /* flex-direction: column; */
+    min-width: 150px; 
+    text-align: left;
+    gap: 10px;
+  }
+  .firstSet{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  
+  .add-to-compare {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #032548; /* Blue color */
+    color: white;             /* Text color */
+    border: none;             /* Remove default border */
+    border-radius: 5px;       /* Rounded corners */
+    padding: 10px 15px;       /* Padding */
+    font-size: 14px;          /* Font size */
+    cursor: pointer;          /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  .add-to-compare:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  .detail strong {
+    color: #333;
+    margin-bottom: 5px;
+
+  }
+  .dropdown-icon {
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .expanded-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;  /* Ensure space between the row and the expanded details */
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+   /* Ensure it takes up full width */
+  width: 100%;   
+  }
+  
+  /* .expanded-details .detail {
+    margin-bottom: 5px;
+    font-size: 14px;
+  } */
+  
+  .flight-row:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+  

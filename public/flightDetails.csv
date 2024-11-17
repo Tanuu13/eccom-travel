@@ -1,0 +1,8 @@
+SRC,DEST,NAME,PRICE,DURATION,STOPS,POWER OUTLET,SEATING,BEVERAGE,REFUNDABLE,MEAL
+DEL,HYD,Cathay Pacific,62148,25h 20 min,1,Yes,Above average legroom (32 in),,,
+DEL,HYD,Air Canada,67051,22h 35 min,1,Yes,Above average legroom (31 in),,,
+DEL,HYD,Lufthansa,74289,26h 55 min,1,,,,,
+DEL,HYD,Indigo,5952,2h 15 min,0,,Above average legroom (29 in),Yes,Partial,
+DEL,HYD,Akasa Air,6669,2h 25 min,0,,,,Partial,
+DEL,HYD,Air India,6874,2h 20 min,0,Yes,Above average legroom (28 in),Yes,Partial,Yes
+DEL,HYD,Delta Air Lines,,,,,,,,
