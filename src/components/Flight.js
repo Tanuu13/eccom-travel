@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlug, faUtensils,faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { useEffect,toggleDetails,expandedRow } from "react";
-
+import { useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import Comparison  from "./Comparison";
 import Papa from "papaparse";
 import "../styles/flight.css"; // Optional: For component-specific styles
 
 const Flight = () => {
+  const navigate = useNavigate();
   const [flightData, setFlightData] = useState([]);
   const [expandedRow, setExpandedRow] = useState(null);
   const [compareList, setCompareList] = useState([]);
@@ -38,6 +40,22 @@ const Flight = () => {
   const toggleDetails = (index) => {
     setExpandedRow(expandedRow === index ? null : index); // Toggle between null and index
   };
+  const handleCompareClick = () => {
+    if (compareList.length >= 2) {
+      // Navigate to the comparison page
+      // Replace `/comparison` with the actual route for the comparison page in your app
+      const comparisonData = {
+        flights: compareList,
+      };
+      console.log("Navigating to comparison page with data:", comparisonData);
+  
+      // If you're using React Router:
+      // useNavigate can be used for programmatic navigation
+      navigate("/comparison", { state: comparisonData });
+    } else {
+      alert("Please add at least two flights to compare.");
+    }
+  };
 
   const handleAddToCompare = (flight) => {
     if (compareList.length < 2) {
@@ -48,6 +66,11 @@ const Flight = () => {
       alert('You can only compare two flights at a time.');
     }
   };
+  // const handleCompareClick = () => {
+  //   // Static navigation, no need to pass data
+  //   // navigate("/comparison");
+  //   <Comparison/>
+  // };
 
   // Remove a flight from the compare list
   const handleRemoveFromCompare = (flight) => {
@@ -194,6 +217,13 @@ const Flight = () => {
             ))}
           </div>
         )}
+        <button
+  className="compare-button"
+  onClick={handleCompareClick} // Removed the extra parentheses
+  disabled={compareList.length < 2} // Disable if less than 2 items
+>
+  Compare
+</button>
       </div>
 </div>
 

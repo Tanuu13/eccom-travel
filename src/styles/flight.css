@@ -32,7 +32,7 @@
     right: 15px; /* Slight padding from the right */
     width: auto; /* Only take the required width */
     max-width: 90%; /* Ensure it doesn't overflow on smaller screens */
-    background-color: #ffffff;
+    background-color: #fefefe;
     border: 1px solid #ccc; /* Add a border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
     padding: 15px 20px; /* Add some padding */
@@ -51,14 +51,14 @@
     display: flex;
     gap: 15px;
     flex-wrap: wrap; /* Allows wrapping if content exceeds width */
-    justify-content: space-between;
+    justify-content: center;
   }
   
   .compare-item {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     width: calc(50% - 10px); /* Two items per row */
   }
   
@@ -94,7 +94,32 @@
   }
    */
 
-
+   .compare-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+  }
+  
+  .compare-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .compare-button:disabled {
+    background-color: #cccccc; /* Gray color for disabled button */
+    cursor: not-allowed;
+  }
+  
+  .compare-button:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+  }
+  
    .flight-container {
     display: flex;
     flex-direction: column;
