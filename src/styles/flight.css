@@ -15,6 +15,63 @@
     object-fit: contain; /* Ensure the image maintains its aspect ratio */
     margin-right: 45px;
   }
+
+  .compare-container {
+    
+    /* position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 2px solid #ccc;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    z-index: 1000; Ensure it's above other elements */
+    position: fixed;
+    bottom: 15px; /* Slight padding from the bottom */
+    right: 15px; /* Slight padding from the right */
+    width: auto; /* Only take the required width */
+    max-width: 90%; /* Ensure it doesn't overflow on smaller screens */
+    background-color: #ffffff;
+    border: 1px solid #ccc; /* Add a border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+    padding: 15px 20px; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
+    z-index: 1000; /* Ensure it's above other elements */
+    font-size: 14px; 
+  }
+  
+  .compare-container h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .compare-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows wrapping if content exceeds width */
+    justify-content: space-between;
+  }
+  
+  .compare-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    width: calc(50% - 10px); /* Two items per row */
+  }
+  
+  .compare-item button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
   /*
   .flight-table {
     width: 100%;

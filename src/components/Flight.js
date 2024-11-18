@@ -9,6 +9,7 @@ import "../styles/flight.css"; // Optional: For component-specific styles
 const Flight = () => {
   const [flightData, setFlightData] = useState([]);
   const [expandedRow, setExpandedRow] = useState(null);
+  const [compareList, setCompareList] = useState([]);
 
   // Path to your CSV file
   const csvFilePath = "/flightDetails.csv";
@@ -37,6 +38,22 @@ const Flight = () => {
   const toggleDetails = (index) => {
     setExpandedRow(expandedRow === index ? null : index); // Toggle between null and index
   };
+
+  const handleAddToCompare = (flight) => {
+    if (compareList.length < 2) {
+      if (!compareList.includes(flight)) {
+        setCompareList([...compareList, flight]);
+      }
+    } else {
+      alert('You can only compare two flights at a time.');
+    }
+  };
+
+  // Remove a flight from the compare list
+  const handleRemoveFromCompare = (flight) => {
+    setCompareList(compareList.filter((item) => item !== flight));
+  };
+
 
   return (
     // <div className="Flight">
@@ -103,10 +120,17 @@ const Flight = () => {
         <div className="detail">
           {flight.NAME || "N/A"}
         </div>
-        <div className="add-to-compare">
+        {/* <div className="add-to-compare">
             Compare
             <span className="icon">+</span>
-          </div>
+          </div> */}
+          <div
+                className="add-to-compare"
+                onClick={() => handleAddToCompare(flight)}
+                style={{ cursor: 'pointer', color: compareList.includes(flight) ? 'green' : 'blue' }}
+              >
+                {compareList.includes(flight) ? 'Added' : 'Add to Compare'}
+              </div>
         </div>
         <div className="detail">
           {flight.DURATION || "N/A"}
@@ -142,12 +166,35 @@ const Flight = () => {
         <FontAwesomeIcon icon={faUtensils} /> {flight.MEAL || "N/A"}
         </div>
   </div>
+  
 )}
+
+
         
         
       </div>
     </div>
   ))}
+  <div className="compare-container">
+        <h3>Compare Flights</h3>
+        {compareList.length === 0 ? (
+          <p>No flights added to compare.</p>
+        ) : (
+          <div className="compare-list">
+            {compareList.map((flight, index) => (
+              <div className="compare-item" key={index}>
+                <div>
+                  <strong>{flight.NAME}</strong> ({flight.SRC} → {flight.DEST})
+                </div>
+                {/* <div>Duration: {flight.DURATION}</div>
+                <div>Stops: {flight.STOPS}</div>
+                <div>Price: ₹{flight.PRICE}</div> */}
+                <button onClick={() => handleRemoveFromCompare(flight)}>Remove</button>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 </div>
 
   );
