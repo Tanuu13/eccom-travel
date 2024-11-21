@@ -79,52 +79,12 @@ const Flight = () => {
 
 
   return (
-    // <div className="Flight">
-    //   <h1>Flight Details</h1>
-      
-    //   {/* File upload input */}
-    //   <input type="file" accept=".csv" onChange={handleFileUpload} />
-
-    //   {/* Display flight details in a table */}
-    //   {flightData.length > 0 && (
-    //     <table className="flight-table">
-    //       <thead>
-    //         <tr>
-    //           <th>SRC</th>
-    //           <th>DEST</th>
-    //           <th>NAME</th>
-    //           <th>PRICE</th>
-    //           <th>DURATION</th>
-    //           <th>STOPS</th>
-    //           <th>POWER OUTLET</th>
-    //           <th>SEATING</th>
-    //           <th>BEVERAGE</th>
-    //           <th>REFUNDABLE</th>
-    //           <th>MEAL</th>
-    //         </tr>
-    //       </thead>
-    //       <tbody>
-    //         {flightData.map((flight, index) => (
-    //           <tr key={index}>
-                
-    //             {/* <td>{flight.SRC || "N/A"}</td>
-    //             <td>{flight.DEST || "N/A"}</td>
-    //             <td>{flight.NAME || "N/A"}</td>
-    //             <td>{flight.PRICE || "N/A"}</td>
-    //             <td>{flight.DURATION || "N/A"}</td>
-    //             <td>{flight.STOPS || "N/A"}</td>
-    //             <td>{flight["POWER OUTLET"] || "N/A"}</td>
-    //             <td>{flight.SEATING || "N/A"}</td>
-    //             <td>{flight.BEVERAGE || "N/A"}</td>
-    //             <td>{flight.REFUNDABLE || "N/A"}</td>
-    //             <td>{flight.MEAL || "N/A"}</td> */}
-    //           </tr>
-    //         ))}
-    //       </tbody>
-    //     </table>
-    //   )}
-    // </div>
+    <div>
+      {/* <div className="navBar">
+        <div className="pacifico-regular navTitle">Flights</div>
+      </div> */}
     <div className="flight-container">
+      
   {flightData.map((flight, index) => (
     <div className="flight-row" key={index}>
       <div className="AirPlaneIcon">
@@ -150,7 +110,7 @@ const Flight = () => {
           <div
                 className="add-to-compare"
                 onClick={() => handleAddToCompare(flight)}
-                style={{ cursor: 'pointer', color: compareList.includes(flight) ? 'green' : 'blue' }}
+                style={{ cursor: 'pointer', color: compareList.includes(flight) ? 'green' : 'white' }}
               >
                 {compareList.includes(flight) ? 'Added' : 'Add to Compare'}
               </div>
@@ -192,9 +152,6 @@ const Flight = () => {
   
 )}
 
-
-        
-        
       </div>
     </div>
   ))}
@@ -225,6 +182,7 @@ const Flight = () => {
   Compare
 </button>
       </div>
+</div>
 </div>
 
   );
